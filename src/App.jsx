@@ -7,9 +7,7 @@ import {
   ChevronDown,
   DollarSign,
   ExternalLink,
-  Facebook,
   Globe2,
-  Instagram,
   Lightbulb,
   Mail,
   MapPin,
@@ -27,7 +25,6 @@ import {
   Star,
   Target,
   TrendingUp,
-  Twitter,
   Users,
   Wallet,
   X,
@@ -316,7 +313,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
-        <div><a className="brand" href="#top">NEXUS<span>.</span></a><p>A premium digital marketing agency focused on strategy, design, and performance.</p><div className="socials"><Instagram /><Twitter /><Facebook /></div></div>
+        <div><a className="brand" href="#top">NEXUS<span>.</span></a><p>A premium digital marketing agency focused on strategy, design, and performance.</p><div className="socials"><Globe2 /><Share2 /><MessageCircle /></div></div>
         <div><h4>Services</h4>{['Website Design', 'Social Media', 'SEO', 'Paid Ads', 'Branding', 'Content Creation'].map((s) => <span key={s}>{s}</span>)}</div>
         <div><h4>Contact</h4><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={15} /> WhatsApp Us</a><span><Mail size={15} /> hello@nexusmedia.com</span><span><Phone size={15} /> +971 50 000 0000</span><span><MapPin size={15} /> Dubai, UAE</span></div>
       </div>
