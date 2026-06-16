@@ -94,6 +94,17 @@ const packages = [
   { name: 'Premium', price: 'Contact us for pricing', desc: 'For serious scaling', features: ['Premium website system', 'Brand identity direction', 'Paid ads funnel', 'Content creation plan', 'Optimization support'] },
 ];
 
+function VideoBackdrop({ file = 'bg-1.mp4', strength = 'soft' }) {
+  return (
+    <div className={`video-backdrop ${strength}`} aria-hidden="true">
+      <video autoPlay muted loop playsInline preload="metadata">
+        <source src={`/videos/${file}`} type="video/mp4" />
+      </video>
+      <div className="video-backdrop-overlay" />
+    </div>
+  );
+}
+
 function Header() {
   const [open, setOpen] = useState(false);
   const goTo = (href) => {
@@ -131,7 +142,8 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="hero dark-grid">
+    <section id="top" className="hero dark-grid video-shell">
+      <VideoBackdrop file="bg-1.mp4" strength="hero-video" />
       <div className="hero-bg-orb one" />
       <div className="hero-bg-orb two" />
       <div className="hero-content">
@@ -164,7 +176,8 @@ function Hero() {
 
 function Services() {
   return (
-    <section id="services" className="section video-section">
+    <section id="services" className="section video-section video-shell">
+      <VideoBackdrop file="bg-2.mp4" />
       <div className="video-glow" />
       <div className="container">
         <div className="section-head centered">
@@ -197,7 +210,8 @@ function Manifesto() {
 
 function WhyChooseUs() {
   return (
-    <section className="section video-section">
+    <section className="section video-section video-shell">
+      <VideoBackdrop file="bg-1.mp4" />
       <div className="container split">
         <div className="sticky-copy">
           <p className="pill">Why Choose Us</p>
@@ -214,7 +228,8 @@ function WhyChooseUs() {
 
 function Portfolio() {
   return (
-    <section id="work" className="section portfolio-section">
+    <section id="work" className="section portfolio-section video-shell">
+      <VideoBackdrop file="bg-2.mp4" />
       <div className="container">
         <div className="section-head">
           <p className="pill">Selected Work</p>
@@ -293,12 +308,13 @@ function Pricing() {
 }
 
 function Vortex() {
-  return <section className="vortex"><div className="ring r1" /><div className="ring r2" /><div className="ring r3" /><div className="vortex-text">NEXUS MEDIA</div></section>;
+  return <section className="vortex video-shell"><VideoBackdrop file="bg-1.mp4" strength="vortex-video" /><div className="ring r1" /><div className="ring r2" /><div className="ring r3" /><div className="vortex-text">NEXUS MEDIA</div></section>;
 }
 
 function CTA() {
   return (
-    <section id="contact" className="section cta-section">
+    <section id="contact" className="section cta-section video-shell">
+      <VideoBackdrop file="bg-2.mp4" />
       <div className="container cta-box glass-card">
         <h2>Ready to Grow Your Business Online?</h2>
         <p>Let’s build a website, campaign, and marketing system that helps your business attract more customers.</p>
