@@ -1,0 +1,84 @@
+/* Local video background support for files in /public/videos/bg-1.mp4 and /public/videos/bg-2.mp4 */
+
+.video-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.video-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.video-backdrop video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.34;
+  filter: saturate(1.15) contrast(1.1) brightness(0.72);
+  transform: scale(1.02);
+}
+
+.video-backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.22), transparent 34rem),
+    radial-gradient(circle at 82% 38%, rgba(6, 182, 212, 0.18), transparent 34rem),
+    linear-gradient(180deg, rgba(3, 3, 3, 0.82), rgba(3, 3, 3, 0.7), rgba(3, 3, 3, 0.88));
+}
+
+.video-backdrop.hero-video video {
+  opacity: 0.4;
+  filter: saturate(1.2) contrast(1.12) brightness(0.68);
+}
+
+.video-backdrop.hero-video .video-backdrop-overlay {
+  background:
+    linear-gradient(90deg, rgba(3, 3, 3, 0.92) 0%, rgba(3, 3, 3, 0.76) 42%, rgba(3, 3, 3, 0.58) 100%),
+    radial-gradient(circle at 22% 20%, rgba(59, 130, 246, 0.28), transparent 34rem),
+    radial-gradient(circle at 78% 48%, rgba(124, 58, 237, 0.22), transparent 36rem);
+}
+
+.video-backdrop.vortex-video video {
+  opacity: 0.46;
+  filter: saturate(1.25) contrast(1.15) brightness(0.6);
+}
+
+.video-backdrop.vortex-video .video-backdrop-overlay {
+  background:
+    radial-gradient(circle at center, rgba(6, 182, 212, 0.18), transparent 30rem),
+    linear-gradient(180deg, rgba(3,3,3,.72), rgba(3,3,3,.9));
+}
+
+.video-shell > .container,
+.video-shell > .hero-content,
+.video-shell > .hero-art,
+.video-shell > .scroll-cue,
+.video-shell > .ring,
+.video-shell > .vortex-text,
+.video-shell > .hero-bg-orb,
+.video-shell > .video-glow {
+  position: relative;
+  z-index: 1;
+}
+
+.video-shell .glass-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.055));
+}
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+  .video-backdrop video {
+    display: none;
+  }
+
+  .video-backdrop-overlay {
+    background:
+      radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.18), transparent 26rem),
+      linear-gradient(180deg, rgba(3,3,3,.88), rgba(3,3,3,.78));
+  }
+}
